@@ -11,5 +11,8 @@
   <div>
     Image URL: <input type="text" name="image_url" value="<%= @product["image_url"] %>" />
   </div>
+  <div>
+    Supplier Id: <input type="number" name="supplier_id" value="<%= @product["supplier"]["id"] %>" />
+  </div>
   <input type="submit" name="" value="Update Product"/>
 <% end %>

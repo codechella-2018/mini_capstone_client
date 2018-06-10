@@ -18,7 +18,8 @@ class Client::ProductsController < ApplicationController
       name: params[:name],
       price: params[:price],
       description: params[:description],
-      image_url: params[:image_url]
+      image_url: params[:image_url],
+      supplier_id: params[:supplier_id]
     }
 
     response = Unirest.post(
@@ -48,7 +49,8 @@ class Client::ProductsController < ApplicationController
       name: params[:name],
       price: params[:price],
       description: params[:description],
-      image_url: params[:image_url]
+      image_url: params[:image_url],
+      supplier_id: params[:supplier_id]
     }
 
     response = Unirest.patch(
