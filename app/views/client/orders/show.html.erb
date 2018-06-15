@@ -1,6 +1,16 @@
 <h1>Orders Show Page</h1>
 
 <h2>Order Id: <%= @order['id'] %></h2>
-<h2>Product Id: <%= @order['product_id'] %></h2>
-<h2>User Id: <%= @order['user_id'] %></h2>
+<h2>Product Id: <%= @order['product']['id'] %></h2>
+<h2>User Id: <%= @order['user']['id'] %></h2>
 <h2>Quantity: <%= @order['quantity'] %></h2>
+<h3>Purchased on: <%= @order['formatted']['created_at'] %></h3>
+<h3>Product Price: <%= @order['product']['formatted']['price'] %></h3>
+<h3>Subtotal: <%= @order['formatted']['subtotal'] %></h3>
+<h3>Tax: <%= @order['formatted']['tax'] %></h3>
+<h3>Total: <%= @order['formatted']['total'] %></h3>
+
+<h2>User Email: <%= @order['user']['email'] %></h2>
+<h2>Product: <%= @order['product']['name'] %>
+</h2>
+<img src="<%= @order['product']['images'][0]['url'] %>" alt="">
