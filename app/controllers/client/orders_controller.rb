@@ -6,10 +6,6 @@ class Client::OrdersController < ApplicationController
 		render 'show.html.erb'
 	end
 
-	def new
-		render 'new.html.erb'
-	end
-
 	def create
 		client_params = {
 			product_id: params[:product_id],

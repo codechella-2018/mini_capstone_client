@@ -5,6 +5,13 @@
 	<% end %>
 	<a href="/client/products/?price_sort=true">Sort by price</a>
 </div>
+Categories:
+<ul>
+	<li><a href="/client/products?category=Cheap">Cheap</a></li>
+	<li><a href="/client/products?category=Wearable">Wearable</a></li>
+	<li><a href="/client/products?category=Damage">Damage</a></li>
+	<li><a href="/client/products?category=Home Good">Home Good</a></li>
+</ul>
 
 <% @products.each do |product| %>
   <h2><a href="/client/products/<%= product["id"] %>"><%= product["name"] %></a></h2>
