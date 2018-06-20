@@ -1,0 +1,10 @@
+<h2>Your Shopping Cart</h2>
+
+<% @carted_products.each do |carted_product| %>
+	<p>Id: <%= carted_product['id'] %></p>
+	<p>Product Name: <%= carted_product['product']['name'] %></p>
+	<p>Product Price: <%= carted_product['product']['formatted']['price'] %></p>
+	<p>Quantity: <%= carted_product['quantity'] %></p>
+<% end %>
+
+<a href="/client/orders" data-method="post" ><button>Order!</button></a>
