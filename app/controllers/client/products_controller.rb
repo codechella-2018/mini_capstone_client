@@ -11,24 +11,44 @@ class Client::ProductsController < ApplicationController
   end
 
   def new
+    @product = {
+     "name" => params[:name],
+     "price" => params[:price],
+     "description" => params[:description],
+     "supplier_id" => params[:supplier_id]
+    }
     render 'new.html.erb'
   end
 
   def create
-    client_params = {
-      name: params[:name],
-      price: params[:price],
-      description: params[:description],
-      supplier_id: params[:supplier_id]
+    @product = {
+     "name" => params[:name],
+     "price" => params[:price],
+     "description" => params[:description],
+     "supplier_id" => params[:supplier_id]
     }
+
+    p "THIS IS @PRODUCT================ #{@product}"
+
+    # client_params = {
+    #   name: params[:name],
+    #   price: params[:price],
+    #   description: params[:description],
+    #   supplier_id: params[:supplier_id]
+    # }
 
     response = Unirest.post(
       "http://localhost:3000/api/products",
-      parameters: client_params
+      parameters: @product
       )
 
-    flash[:success] = "Successfully created Product"
-    redirect_to "/client/products/"
+    if response.code == 200
+      flash[:success] = "Successfully created Product"
+      redirect_to "/client/products/"
+    else
+      @errors = response.body['errors']
+      render 'new.html.erb'
+    end
   end
 
   def show
