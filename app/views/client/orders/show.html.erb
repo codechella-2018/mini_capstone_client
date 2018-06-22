@@ -8,3 +8,17 @@
 <h3>Total: <%= @order['formatted']['total'] %></h3>
 
 <h2>User Email: <%= @order['user']['email'] %></h2>
+
+<% @order['carted_products'].each do |carted_product| %>
+	<p>Product name: <%= carted_product['product']['name'] %> </p>
+	<p>Product price: <%= carted_product['product']['formatted']['price'] %></p>
+	<p>Quantity: <%= carted_product['quantity'] %></p>
+<% end %>
+
+
+
+
+
+
+
+

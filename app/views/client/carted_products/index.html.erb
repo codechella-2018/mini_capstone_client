@@ -5,6 +5,7 @@
 	<p>Product Name: <%= carted_product['product']['name'] %></p>
 	<p>Product Price: <%= carted_product['product']['formatted']['price'] %></p>
 	<p>Quantity: <%= carted_product['quantity'] %></p>
+	<a href="/client/carted_products/<%= carted_product['id'] %>" data-method="delete">remove</a><br>
 <% end %>
 
 <a href="/client/orders" data-method="post" ><button>Order!</button></a>
